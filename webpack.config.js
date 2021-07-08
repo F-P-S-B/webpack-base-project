@@ -2,7 +2,7 @@ const path = require("path");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
@@ -16,6 +16,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.ts$/,
+        use: ["ts-loader"],
       },
     ],
   },
